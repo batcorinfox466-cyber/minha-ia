@@ -33,17 +33,17 @@ public class PlayerJoinHandler {
 
             // 🌈 Logo "Flolia 🍁"
             MutableComponent floliaLogo = Component.empty()
-                .append(Component.literal("F").withStyle(style -> style.withColor(TextColor.parseColor("#FF0000"))))
-                .append(Component.literal("l").withStyle(style -> style.withColor(TextColor.parseColor("#FFA500"))))
-                .append(Component.literal("o").withStyle(style -> style.withColor(TextColor.parseColor("#FFFF00"))))
-                .append(Component.literal("l").withStyle(style -> style.withColor(TextColor.parseColor("#008000"))))
-                .append(Component.literal("i").withStyle(style -> style.withColor(TextColor.parseColor("#00FFFF"))))
-                .append(Component.literal("a").withStyle(style -> style.withColor(TextColor.parseColor("#EE82EE"))))
-                .append(Component.literal(" 🍁").withStyle(style -> style.withColor(TextColor.parseColor("#FFA500"))));
+                .append(Component.literal("F").withStyle(style -> style.withColor(TextColor.parseColor("#FF0000").getOrThrow())))
+                .append(Component.literal("l").withStyle(style -> style.withColor(TextColor.parseColor("#FFA500").getOrThrow())))
+                .append(Component.literal("o").withStyle(style -> style.withColor(TextColor.parseColor("#FFFF00").getOrThrow())))
+                .append(Component.literal("l").withStyle(style -> style.withColor(TextColor.parseColor("#008000").getOrThrow())))
+                .append(Component.literal("i").withStyle(style -> style.withColor(TextColor.parseColor("#00FFFF").getOrThrow())))
+                .append(Component.literal("a").withStyle(style -> style.withColor(TextColor.parseColor("#EE82EE").getOrThrow())))
+                .append(Component.literal(" 🍁").withStyle(style -> style.withColor(TextColor.parseColor("#FFA500").getOrThrow())));
 
             // 🌈 Nome do Jogador Colorido
             MutableComponent playerNameColored = Component.literal(serverPlayer.getName().getString())
-                .withStyle(style -> style.withColor(TextColor.parseColor("#FFD700")).withBold(true));
+                .withStyle(style -> style.withColor(TextColor.parseColor("#FFD700").getOrThrow()).withBold(true));
 
             Component welcomeMessage = Component.translatable("solanaforge.message.welcome")
                 .append(playerNameColored)

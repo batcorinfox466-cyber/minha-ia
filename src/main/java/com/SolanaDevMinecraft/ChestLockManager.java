@@ -94,7 +94,7 @@ public class ChestLockManager {
                 player.sendSystemMessage(Component.translatable("solanaforge.message.chest.locked"));
 
                 net.minecraft.world.item.ItemStack tag = new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.NAME_TAG);
-                tag.setHoverName(Component.literal(password));
+                tag.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME, Component.literal(password));
                 player.getInventory().add(tag);
                 player.sendSystemMessage(Component.translatable("solanaforge.message.chest.password_tag"));
 

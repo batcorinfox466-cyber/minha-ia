@@ -17,10 +17,10 @@ public class ItemInit {
     public static final Item LEG_RELIC = new ArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().rarity(Rarity.EPIC));
 
     public static void registerItems() {
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(SolanaForge.MODID, "nether_relic"), NETHER_RELIC);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(SolanaForge.MODID, "thor_axe"), THOR_AXE);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(SolanaForge.MODID, "boot_relic"), BOOT_RELIC);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(SolanaForge.MODID, "wing_relic"), WING_RELIC);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(SolanaForge.MODID, "leg_relic"), LEG_RELIC);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(SolanaForge.MODID, "nether_relic"), NETHER_RELIC);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(SolanaForge.MODID, "thor_axe"), THOR_AXE);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(SolanaForge.MODID, "boot_relic"), BOOT_RELIC);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(SolanaForge.MODID, "wing_relic"), WING_RELIC);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(SolanaForge.MODID, "leg_relic"), LEG_RELIC);
     }
 }

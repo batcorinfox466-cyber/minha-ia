@@ -145,13 +145,16 @@ public class StoreManager {
         int price = ConfigManager.PRICE_BOOT_RELIC;
         if (processPurchase(player, price)) {
             ItemStack boots = new ItemStack(ItemInit.BOOT_RELIC);
-            boots.getOrCreateTag().putBoolean("Unbreakable", true);
+            boots.set(net.minecraft.core.component.DataComponents.UNBREAKABLE, new net.minecraft.world.item.component.Unbreakable(true));
             net.minecraft.network.chat.MutableComponent customName = Component.translatable("solanaforge.message.relic_boots_name")
-                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#FF55FF")).withItalic(false));
-            boots.setHoverName(customName);
-            boots.enchant(net.minecraft.world.item.enchantment.Enchantments.DEPTH_STRIDER, 3);
-            boots.enchant(net.minecraft.world.item.enchantment.Enchantments.MENDING, 1);
-            boots.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 3);
+                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#FF55FF").getOrThrow()).withItalic(false));
+            boots.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME, customName);
+            
+            var registry = player.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
+            boots.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.DEPTH_STRIDER), 3);
+            boots.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.MENDING), 1);
+            boots.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING), 3);
+            
             player.getInventory().add(boots);
             player.sendSystemMessage(Component.translatable("solanaforge.message.buy_relic_boots", price));
         }
@@ -161,13 +164,16 @@ public class StoreManager {
         int price = ConfigManager.PRICE_WING_RELIC;
         if (processPurchase(player, price)) {
             ItemStack wings = new ItemStack(ItemInit.WING_RELIC);
-            wings.getOrCreateTag().putBoolean("Unbreakable", true);
+            wings.set(net.minecraft.core.component.DataComponents.UNBREAKABLE, new net.minecraft.world.item.component.Unbreakable(true));
             net.minecraft.network.chat.MutableComponent customName = Component.translatable("solanaforge.message.relic_wing_name")
-                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#FFAA00")).withItalic(false));
-            wings.setHoverName(customName);
-            wings.enchant(net.minecraft.world.item.enchantment.Enchantments.MENDING, 1);
-            wings.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 3);
-            wings.enchant(net.minecraft.world.item.enchantment.Enchantments.BINDING_CURSE, 1);
+                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#FFAA00").getOrThrow()).withItalic(false));
+            wings.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME, customName);
+            
+            var registry = player.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
+            wings.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.MENDING), 1);
+            wings.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING), 3);
+            wings.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.BINDING_CURSE), 1);
+            
             player.getInventory().add(wings);
             player.sendSystemMessage(Component.translatable("solanaforge.message.buy_relic_wing", price));
         }
@@ -177,13 +183,16 @@ public class StoreManager {
         int price = 250; // Usando valor fixo ou pode vir do config
         if (processPurchase(player, price)) {
             ItemStack legs = new ItemStack(ItemInit.LEG_RELIC);
-            legs.getOrCreateTag().putBoolean("Unbreakable", true);
+            legs.set(net.minecraft.core.component.DataComponents.UNBREAKABLE, new net.minecraft.world.item.component.Unbreakable(true));
             net.minecraft.network.chat.MutableComponent customName = Component.translatable("solanaforge.message.shield_legs_name")
-                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#00FFFF")).withItalic(false));
-            legs.setHoverName(customName);
-            legs.enchant(net.minecraft.world.item.enchantment.Enchantments.ALL_DAMAGE_PROTECTION, 10);
-            legs.enchant(net.minecraft.world.item.enchantment.Enchantments.MENDING, 1);
-            legs.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 3);
+                    .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor("#00FFFF").getOrThrow()).withItalic(false));
+            legs.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME, customName);
+            
+            var registry = player.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
+            legs.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.PROTECTION), 10);
+            legs.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.MENDING), 1);
+            legs.enchant(registry.getHolderOrThrow(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING), 3);
+            
             player.getInventory().add(legs);
             player.sendSystemMessage(Component.translatable("solanaforge.message.buy_shield_legs", price));
         }

@@ -72,7 +72,7 @@ public class HomeManager {
                     double z = rs.getDouble("z");
 
                     player.getServer().execute(() -> {
-                        ResourceKey<Level> levelKey = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(finalWorldName));
+                        ResourceKey<Level> levelKey = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(finalWorldName));
                         ServerLevel level = player.getServer().getLevel(levelKey);
                         if (level != null) {
                             player.teleportTo(level, x, y, z, player.getYRot(), player.getXRot());

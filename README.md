@@ -1,6 +1,6 @@
-# SolanaForge (Versão Fabric 1.20.1)
+# SolanaForge (Versão Fabric 1.21.11)
 
-O **SolanaForge** é um mod para Minecraft projetado originalmente para o Forge e totalmente portado e reestruturado para o **Fabric (1.20.1)**. Este mod adiciona diversas mecânicas essenciais para servidores de sobrevivência focados em economia com criptomoeda e utilidades de transporte.
+O **SolanaForge** é um mod para Minecraft projetado originalmente para o Forge e totalmente portado e reestruturado para o **Fabric (1.21.11)**. Este mod adiciona diversas mecânicas essenciais para servidores de sobrevivência focados em economia com criptomoeda e utilidades de transporte.
 
 ## 🌟 Funcionalidades Principais
 
@@ -20,8 +20,8 @@ O **SolanaForge** é um mod para Minecraft projetado originalmente para o Forge 
   - Salva jogadores, saldos, locais de sethome, e permissões diretamente em um banco MySQL, compatível com a sincronização do servidor web.
 
 ## ⚙️ Tecnologias Utilizadas
-- **Java 17**
-- **Fabric API 1.20.1** (Migrado do Forge)
+- **Java 21**
+- **Fabric API 1.21.11** (Migrado do Forge)
 - **Fabric Loom 1.7+**
 - **MySQL Connector/J**
 
@@ -37,7 +37,7 @@ O **SolanaForge** é um mod para Minecraft projetado originalmente para o Forge 
    ./gradlew build
    ```
 4. O arquivo `.jar` compilado será gerado dentro da pasta `build/libs/`. 
-5. Basta colocar o `.jar` gerado na pasta `mods` da sua instância Fabric 1.20.1, junto com a dependência **Fabric API**.
+5. Basta colocar o `.jar` gerado na pasta `mods` da sua instância Fabric 1.21.11, junto com a dependência **Fabric API**.
 
 ## 🛠 Configuração do Banco de Dados
 
@@ -59,3 +59,8 @@ Feito isso, ao iniciar novamente, o mod vai criar as tabelas necessárias de for
 
 ## 👥 Contribuição
 Fique à vontade para mandar *Pull Requests* ou abrir *Issues* caso encontre problemas!
+
+## 🙏 Agradecimentos Especiais
+
+Um enorme agradecimento ao(à) **Anabel369** por ter criado a versão original do mod em Forge, servindo como base crucial para que esta nova e aprimorada versão em Fabric ganhasse vida.
+Agradecimento especial também ao **Venom** (que atende pelo nome de **Sonic** por aqui!), grande parceiro e amigo que acompanha esse projeto de perto. Muito obrigado a todos!

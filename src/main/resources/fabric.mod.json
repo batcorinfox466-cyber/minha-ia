@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "solanaforge",
+  "version": "${version}",
+  "name": "Solana Fabric",
+  "description": "Mod que integra a blockchain Solana ao Minecraft Fabric 1.20.1.",
+  "authors": [
+    "Amauri Bueno dos Santos"
+  ],
+  "contact": {
+    "homepage": "https://solanadev.com"
+  },
+  "license": "MIT",
+  "icon": "solanaforge.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.SolanaDevMinecraft.SolanaForge"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
